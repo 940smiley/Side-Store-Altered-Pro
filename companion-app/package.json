@@ -1,0 +1,34 @@
+{  
+  "name": "side-store-altered-pro-companion",  
+  "version": "1.0.0",  
+  "description": "Companion app for Side-Store-Altered-Pro to help with IPA management, dylib injection, and iOS shortcuts",  
+  "main": "index.js",  
+  "scripts": {  
+    "start": "electron .",  
+    "build": "electron-builder",  
+    "build:win": "electron-builder --win",  
+    "build:mac": "electron-builder --mac",  
+    "build:linux": "electron-builder --linux"  
+  },  
+  "keywords": [  
+    "ios",  
+    "ipa",  
+    "side-store",  
+    "jailbreak",  
+    "dylib",  
+    "shortcuts"  
+  ],  
+  "author": "Side-Store-Altered-Pro Team",  
+  "license": "MIT",  
+  "devDependencies": {  
+    "electron": "^latest",  
+    "electron-builder": "^latest"  
+  },  
+  "dependencies": {  
+    "react": "^18.2.0",  
+    "react-dom": "^18.2.0",  
+    "electron-updater": "^latest",  
+    "axios": "^1.6.0",  
+    "node-ipc": "^10.1.0"  
+  }  
+} 
