@@ -17,3 +17,13 @@ releases/
 *.exe  
 *.dmg  
 *.pkg 
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+*.xcuserstate
+.DS_Store
+*.ipa
+*.xcarchive

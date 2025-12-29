@@ -1,0 +1,64 @@
+name: Build IPA with Fake Signing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build iOS App
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          brew install xcodegen
+          brew install ldid
+
+      - name: Generate Xcode Project
+        run: |
+          cd ios-app
+          xcodegen generate
+
+      - name: Select Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+
+      - name: Build Xcode Archive
+        run: |
+          xcodebuild archive \
+            -project ios-app/SideStoreAlteredPro.xcodeproj \
+            -scheme SideStoreAlteredPro \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/SideStoreAlteredPro.xcarchive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Create Payload directory
+        run: mkdir -p Payload
+
+      - name: Copy App to Payload
+        run: cp -R build/SideStoreAlteredPro.xcarchive/Products/Applications/SideStoreAlteredPro.app Payload/SideStoreAlteredPro.app
+
+      - name: Sign Main App Bundle
+        run: |
+          APP_BINARY_PATH="Payload/SideStoreAlteredPro.app/SideStoreAlteredPro"
+          # Use the specific entitlements for the main app
+          ldid -S"ios-app/SideStoreAlteredPro/SideStoreAlteredPro.entitlements" "$APP_BINARY_PATH"
+          echo "Signed Main App Bundle with fake signing."
+
+      - name: Create IPA
+        run: |
+          zip -r ./SideStoreAlteredPro-fakesigned.ipa Payload
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SideStoreAlteredPro-IPA
+          path: SideStoreAlteredPro-fakesigned.ipa

@@ -9,10 +9,16 @@ This is the main iOS application for SideStore Altered Pro.
 - AI-powered Shortcut Integration
 
 ## Development
-- Open `SideStoreAlteredPro.xcodeproj` (to be created) in Xcode.
+- This project uses **XcodeGen** to manage the `.xcodeproj` file.
+- To generate the project locally (on macOS):
+  ```bash
+  brew install xcodegen
+  xcodegen generate
+  ```
+- The project is configured for **Fake Signing** using `ldid` on GitHub Actions.
 - Supports iOS 15.0 and above.
-- Requires a valid signing certificate.
 
-## Architecture
-- Swift-based UI (SwiftUI)
-- Integration with `yololib` and `opainject` for dylib management.
+## CI/CD
+- A GitHub Action is configured in `.github/workflows/ios_build.yml`.
+- It automatically builds and signs the app with self-signed entitlements using `ldid`.
+- The resulting `.ipa` is available as a workflow artifact.

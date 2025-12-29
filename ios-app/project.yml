@@ -1,0 +1,17 @@
+name: SideStoreAlteredPro
+options:
+  bundleIdPrefix: com.yourname
+targets:
+  SideStoreAlteredPro:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources: [SideStoreAlteredPro]
+    settings:
+      CODE_SIGNING_ALLOWED: NO
+      CODE_SIGNING_REQUIRED: NO
+      CODE_SIGN_IDENTITY: ""
+      DEVELOPMENT_TEAM: ""
+      PRODUCT_BUNDLE_IDENTIFIER: com.yourname.SideStoreAlteredPro
+    entitlements:
+      path: SideStoreAlteredPro/SideStoreAlteredPro.entitlements
