@@ -1,27 +1,29 @@
-{  
-  "name": "side-store-altered-pro",  
-  "version": "1.0.0",  
-  "description": "iOS application and companion tool for IPA management, dylib injection, and iOS shortcuts",  
-  "main": "index.js",  
-  "scripts": {  
-    "test": "echo \\"Error: no test specified\\" && exit 1"  
-  },  
-  "repository": {  
-    "type": "git",  
-    "url": "git+https://github.com/username/Side-Store-Altered-Pro.git"  
-  },  
-  "keywords": [  
-    "ios",  
-    "ipa",  
-    "jailbreak",  
-    "side-store",  
-    "tweaks",  
-    "shortcuts"  
-  ],  
-  "author": "Side-Store-Altered-Pro Team",  
-  "license": "MIT",  
-  "bugs": {  
-    "url": "https://github.com/username/Side-Store-Altered-Pro/issues"  
-  },  
-  "homepage": "https://github.com/username/Side-Store-Altered-Pro#readme"  
-} 
+{
+  "name": "side-store-altered-pro",
+  "version": "1.0.0",
+  "description": "iOS application and companion tool for IPA management, dylib injection, and iOS shortcuts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "companion:start": "npm start --prefix companion-app",
+    "companion:install": "npm install --prefix companion-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/Side-Store-Altered-Pro.git"
+  },
+  "keywords": [
+    "ios",
+    "ipa",
+    "jailbreak",
+    "side-store",
+    "tweaks",
+    "shortcuts"
+  ],
+  "author": "Side-Store-Altered-Pro Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/username/Side-Store-Altered-Pro/issues"
+  },
+  "homepage": "https://github.com/username/Side-Store-Altered-Pro#readme"
+}

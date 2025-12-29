@@ -1,74 +1,65 @@
-<!DOCTYPE html>  
-<html>  
-  <head>  
-    <meta charset="UTF-8">  
-    <title>Side-Store-Altered-Pro Companion</title>  
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">  
-    <style>  
-      body {  
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;  
-        margin: 0;  
-        padding: 20px;  
-        background-color: #f5f5f7;  
-      }  
-      .container {  
-        max-width: 1000px;  
-        margin: 0 auto;  
-      }  
-      .header {  
-        text-align: center;  
-        margin-bottom: 30px;  
-      }  
-      .features {  
-        display: grid;  
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
-        gap: 20px;  
-        margin-top: 30px;  
-      }  
-      .feature-card {  
-        background: white;  
-        border-radius: 10px;  
-        padding: 20px;  
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);  
-      }  
-      button {  
-        background-color: #007aff;  
-        color: white;  
-        border: none;  
-        padding: 10px 20px;  
-        border-radius: 5px;  
-        cursor: pointer;  
-        font-size: 16px;  
-      }  
-      button:hover {  
-        background-color: #0062cc;  
-      }  
-    </style>  
-  </head>  
-  <body>  
-    <div class="container">  
-      <div class="header">  
-        <h1>Side-Store-Altered-Pro Companion</h1>  
-        <p>Your tool for iOS IPA management, dylib injection, and shortcut creation</p>  
-      </div>  
-      <div class="features">  
-        <div class="feature-card">  
-          <h3>IPA Management</h3>  
-          <p>Download, extract, modify, and resign IPA files</p>  
-          <button id="ipa-btn">Manage IPAs</button>  
-        </div>  
-        <div class="feature-card">  
-          <h3>Dylib Injection</h3>  
-          <p>Inject dynamic libraries into applications using yololib and opainject</p>  
-          <button id="dylib-btn">Inject Dylibs</button>  
-        </div>  
-        <div class="feature-card">  
-          <h3>iOS Shortcuts</h3>  
-          <p>Create iOS shortcuts with drag-and-drop or natural language</p>  
-          <button id="shortcuts-btn">Create Shortcuts</button>  
-        </div>  
-      </div>  
-    </div>  
-    <script src="renderer.js"></script>  
-  </body>  
-</html> 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SideStore Altered Pro | Companion</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+    <link rel="stylesheet" href="globals.css">
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="sidebar">
+        <h2>Dashboard</h2>
+        <div class="nav-item active">
+          <span>🏠</span> Overview
+        </div>
+        <div class="nav-item">
+          <span>📦</span> IPA Manager
+        </div>
+        <div class="nav-item">
+          <span>💉</span> Dylib Injector
+        </div>
+        <div class="nav-item">
+          <span>🪄</span> AI Shortcuts
+        </div>
+        <div class="nav-item">
+          <span>⚙️</span> Settings
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="header">
+          <h1>Welcome, Pro</h1>
+          <p>Manage your iOS applications with surgical precision.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>IPA Management</h3>
+            <p>Extract, modify, and re-sign IPA files directly from your device or local storage.</p>
+            <button class="btn" id="ipa-btn">Launch Manager</button>
+          </div>
+
+          <div class="card">
+            <h3>Dylib Injection</h3>
+            <p>Inject custom dynamic libraries into any IPA. Powered by yololib and opainject.</p>
+            <button class="btn" id="dylib-btn">Configure Injection</button>
+          </div>
+
+          <div class="card">
+            <h3>AI Shortcut Engine</h3>
+            <p>Generate complex iOS shortcuts using natural language. Just describe what you want.</p>
+            <button class="btn" id="shortcuts-btn">Create Shortcut</button>
+          </div>
+
+          <div class="card">
+            <h3>Device Status</h3>
+            <p>Connected: <strong>iPhone 15 Pro</strong><br>Status: Authorized</p>
+            <button class="btn" style="background: var(--text-secondary);">Refresh Connection</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>
